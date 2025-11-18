@@ -129,10 +129,10 @@ pnpm install
 # Generate Prisma Client
 pnpm prisma generate
 
-# Run migrations
+# Run migrations (creates all tables in Neon)
 pnpm prisma migrate dev --name init
 
-# (Optional) Seed database with sample data
+# Seed database with sample data (recommended for testing)
 pnpm prisma db seed
 
 # Start development server
@@ -193,6 +193,33 @@ cd backend
 pnpm prisma studio
 ```
 This opens Prisma Studio to browse the database visually.
+
+### Sample Data (After Seeding)
+
+When you run `pnpm prisma db seed`, the following sample data is created:
+
+**Users & Authentication:**
+- 1 Principal: `principal@school.com`
+- 2 Teachers: `math.teacher@school.com`, `science.teacher@school.com`
+- 1 Finance Staff: `finance@school.com`
+- 2 Parents: `parent1@email.com`, `parent2@email.com`
+- 3 Students: `student1@email.com`, `student2@email.com`, `student3@email.com`
+
+**Password for all users:** `password123`
+
+**School Structure:**
+- 1 School (Delhi Public School - CBSE)
+- 3 Classes (10A, 10B, 12A)
+- 5 Subjects (Mathematics, Science, English, Physics, Chemistry)
+
+**Sample Data:**
+- Attendance records
+- 2 Exams (Quarterly & Board 12th)
+- Exam results
+- Fee structure & payments
+- 2 Meetings scheduled
+- Notifications & announcements
+- Assignments
 
 ## 🔧 Development Commands
 
