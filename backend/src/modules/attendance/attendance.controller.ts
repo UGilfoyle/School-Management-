@@ -34,7 +34,7 @@ export class AttendanceController {
     const data = XLSX.utils.sheet_to_json(worksheet) as any[];
 
     // Validate and map data
-    const records = data.map((row) => ({
+    const records = data.map((row: any) => ({
       rollNumber: row['Roll Number']?.toString() || row['rollNumber']?.toString(),
       status: (row['Status'] || row['status'])?.toUpperCase(),
       remarks: row['Remarks'] || row['remarks'],

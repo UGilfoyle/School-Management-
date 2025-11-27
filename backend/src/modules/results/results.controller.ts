@@ -28,7 +28,7 @@ export class ResultsController {
     const data = XLSX.utils.sheet_to_json(worksheet) as any[];
 
     // Validate and map data
-    const records = data.map((row) => ({
+    const records = data.map((row: any) => ({
       rollNumber: row['Roll Number']?.toString() || row['rollNumber']?.toString(),
       marksObtained: Number(row['Marks Obtained'] || row['marksObtained']),
       maxMarks: Number(row['Max Marks'] || row['maxMarks']),
